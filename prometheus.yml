@@ -1,0 +1,99 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['skydde0195.skydde.local:9090']
+        ##- targets: ['https://css-skydde0029.skydde.local/hcm/Jobs/page/JobsHomePage']
+        ##- targets: ['www.google.com']
+  - job_name: docker
+    scrape_interval: 5s
+    static_configs:
+    - targets:
+      - prometheus:9090
+      - node-exporter:9100
+      - pushgateway:9091
+      - cadvisor:8080
+  - job_name: 'Security SKYDDE Environments'
+    scrape_interval: 5s
+    static_configs:
+      - targets:
+        - skydde0158.skydde.local:9182
+        labels:
+          instance: skydde0158
+      - targets:
+        - skydde0157.skydde.local:9182
+        labels:
+          instance: skydde0157
+      - targets:
+        - skydde0155.skydde.local:9182
+        labels:
+          instance: skydde0155
+      - targets:
+        - skydde0156.skydde.local:9182
+        labels:
+          instance: skydde0156
+      - targets:
+        - skydde0149.skydde.local:9182
+        labels:
+          instance: skydde0149
+      - targets:
+        - skydde0153.skydde.local:9182
+        labels:
+          instance: skydde0153
+      - targets:
+        - skydde0166.skydde.local:9182
+        labels:
+          instance: skydde0166
+      - targets:
+        - skydde0163.skydde.local:9182
+        labels:
+          instance: skydde0163
+      - targets:
+        - skydde0167.skydde.local:9182
+        labels:
+          instance: skydde0167
+      - targets:
+        - skydde0164.skydde.local:9182
+        labels:
+          instance: skydde0164
+      - targets:
+        - skydde0061.skydde.local:9182
+        labels:
+          instance: skydde0061
+      - targets:
+        - skydde0062.skydde.local:9182
+        labels:
+          instance: skydde0062
+      - targets:
+        - skydde0175.skydde.local:9182
+        labels:
+          instance: skydde0175
+      - targets:
+        - skydde0172.skydde.local:9182
+        labels:
+          instance: skydde0172
+      - targets:
+        - skydde0183.skydde.local:9182
+        labels:
+          instance: skydde0183
+      - targets:
+        - skydde0184.skydde.local:9182
+        labels:
+          instance: skydde0184
+      - targets:
+        - skydde0161.skydde.local:9182
+        labels:
+          instance: skydde0161
+      - targets:
+        - skydde0162.skydde.local:9182
+        labels:
+          instance: skydde0162
+      - targets:
+        - skydde0177.skydde.local:9182
+        labels:
+          instance: skydde0177
+
+
